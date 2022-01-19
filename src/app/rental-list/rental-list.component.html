@@ -1,0 +1,18 @@
+<div class="card-body text-dark">
+  <h6>Rentals 
+    <span class="badge badge-secondary">
+      {{rentalList.length}}</span>
+
+  </h6>
+  <div *ngFor="let rental of rentalList" style="font-size:12px">
+    {{rental.title}}
+    <icon-cat></icon-cat> 
+    <icon-ship></icon-ship> 
+    <icon-spider></icon-spider> 
+  </div>
+
+
+  <button class="btn btn-primary btn-sm"
+    (click)="onClearClick()"
+  >Clear</button>
+</div>
