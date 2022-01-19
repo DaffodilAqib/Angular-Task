@@ -4,15 +4,19 @@
       {{rentalList.length}}</span>
 
   </h6>
-  <div *ngFor="let rental of rentalList" style="font-size:12px">
+  <div *ngFor="let rental of rentalList"
+    [ngSwitch]="rental.title"
+  style="font-size:12px">
     {{rental.title}}
-    <icon-cat></icon-cat> 
-    <icon-ship></icon-ship> 
-    <icon-spider></icon-spider> 
+    <icon-cat *ngSwitchCase = "'Cats'"></icon-cat> 
+    <icon-ship *ngSwitchCase = "'Wing Commander'"></icon-ship> 
+    <icon-spider *ngSwitchCase = "'Spider-Man 3'"></icon-spider> 
   </div>
 
 
-  <button class="btn btn-primary btn-sm"
+  <button 
+    *ngIf = "rentalList.length"
+  class="btn btn-primary btn-sm"
     (click)="onClearClick()"
   >Clear</button>
 </div>
